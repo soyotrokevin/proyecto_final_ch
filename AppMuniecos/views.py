@@ -1,7 +1,8 @@
 from typing import Dict
 from django.shortcuts import render, HttpResponse
 from django.http import HttpResponse
-from AppMuniecos.models import Ropa
+from AppMuniecos.models import Ropa, Marca, Munieco
+
 
 # Create your views here.
 def inicio(request):
@@ -9,7 +10,7 @@ def inicio(request):
 
 
 def muniecos(request):
-    muniecos = muniecos.objects.all()
+    muniecos = Munieco.objects.all()
     return render(request, "AppMuniecos/muniecos.html", {'Muñecos': muniecos})
 
 
@@ -19,7 +20,7 @@ def ropa(request):
 
 
 def marcas(request):
-    marcas = marcas.objects.all()
+    marcas = Marca.objects.all()
     return render(request, "AppMuniecos/marcas.html")
 
 def usuarios(request):

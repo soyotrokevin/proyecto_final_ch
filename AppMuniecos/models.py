@@ -1,10 +1,6 @@
 from django.db import models
 
 
-class Usuario(models.Model):
-    nombre = models.CharField(max_length=128)
-    apellido = models.CharField(max_length=128)
-    email = models.EmailField()
 
 class Munieco(models.Model):
     marca = models.ForeignKey('marca', on_delete=models.CASCADE,)
