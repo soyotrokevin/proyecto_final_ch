@@ -1,15 +1,13 @@
 from django.db import models
-from datetime import date
 
-# Create your models here.
 
-class Usuarios(models.Model):
+class Usuario(models.Model):
     nombre = models.CharField(max_length=128)
     apellido = models.CharField(max_length=128)
     email = models.EmailField()
 
-class muniecos(models.Model):
-    marca = models.ForeignKey('marcas', on_delete=models.CASCADE,)
+class Munieco(models.Model):
+    marca = models.ForeignKey('marca', on_delete=models.CASCADE,)
     munieco = models.CharField(max_length=128)
     precio = models.CharField(max_length=128)
     origen = models.ForeignKey('origen', on_delete=models.CASCADE,)
@@ -19,14 +17,14 @@ class muniecos(models.Model):
     #    return f'{self.apellido}, {self.nombre}'
 
 
-class ropa(models.Model):
+class Ropa(models.Model):
     prenda = models.CharField(max_length=128)
-    marca = models.ForeignKey('marcas', on_delete=models.CASCADE,)
+    marca = models.ForeignKey('marca', on_delete=models.CASCADE,)
     talle = models.CharField(max_length=128)
     precio = models.CharField(max_length=128)
     color = models.CharField(max_length=64)
 
-class marcas(models.Model):
+class Marca(models.Model):
     nombre = models.CharField(max_length=128)
 
 

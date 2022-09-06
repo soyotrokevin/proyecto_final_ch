@@ -1,3 +1,4 @@
 from django.contrib import admin
+from AppMuniecos.models import Ropa
 
-# Register your models here.
+admin.site.register(Ropa)
