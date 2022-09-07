@@ -1,16 +1,11 @@
 from django.db import models
 
-
-
 class Munieco(models.Model):
     marca = models.ForeignKey('marca', on_delete=models.CASCADE,)
     munieco = models.CharField(max_length=128)
     precio = models.CharField(max_length=128)
     origen = models.ForeignKey('origen', on_delete=models.CASCADE,)
     anio_fabricacion = models.DateTimeField()
-
-    #def __str__(self):
-    #    return f'{self.apellido}, {self.nombre}'
 
 
 class Ropa(models.Model):
@@ -23,6 +18,10 @@ class Ropa(models.Model):
 class Marca(models.Model):
     nombre = models.CharField(max_length=128)
 
+    def __str__(self):
+        return f'{self.nombre}'
 
 class origen(models.Model):
     pais = models.CharField(max_length=128)
+    
+    

@@ -1,0 +1,12 @@
+{% extends "AppMuniecos/template.html" %}
+
+{% block contenido_base %}
+<h2>Agregar Marcas</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  <input type="submit" value="Agregar" />
+</form>
+
+{% endblock contenido_base %}

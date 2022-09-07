@@ -3,6 +3,16 @@
 {% block contenido_base %}
 
 
-<h1>Marcas!</h1>
+<h2>Listado de Marcas:</h2>
+
+{% for marca in marcas %}
+    {{marca.nombre}} <br>
+{% endfor %}
+
+<br>
+
+<a href="{% url 'form_load_marcas' %}">Agregar marca</a>
+<br>
+<a href="{% url 'form_search_marca' %}">Buscar marca</a>
 
 {% endblock contenido_base %}

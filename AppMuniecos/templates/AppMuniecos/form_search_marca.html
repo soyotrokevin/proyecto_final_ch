@@ -1,0 +1,13 @@
+{% extends "AppMuniecos/template.html" %}
+
+{% block contenido_base %}
+
+<form action="{% url 'busqueda' %}" method="GET">
+    {% csrf_token %}
+    <span>Marcas:
+        <input type="integer" name="nombre">
+    </span>
+    <input type="submit" value="Buscar" />
+</form>
+
+{% endblock contenido_base %}
