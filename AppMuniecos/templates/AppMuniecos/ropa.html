@@ -5,4 +5,27 @@
 
 <h1>Ropa!</h1>
 
+<table class="table">
+    <tbody>
+      <tr>
+        <th>
+          <strong>Prenda</strong>
+        </th>
+        <th>
+          <strong>Talle (Número)</strong>
+        </th>
+      </tr>
+      {% for ropa in prendas %}
+      <tr>
+        <td>{{ropa.prenda}}</td>
+        <td>{{ropa.talle}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+<br>
+
+<a href="{% url 'form_load_ropa' %}">Agregar Prendas</a>
+<br>
+
 {% endblock contenido_base %}

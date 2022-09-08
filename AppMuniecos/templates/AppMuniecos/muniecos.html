@@ -2,7 +2,29 @@
 
 {% block contenido_base %}
 
-
 <h1>Muñecos!</h1>
+
+<table class="table">
+    <tbody>
+      <tr>
+        <th>
+          <strong>Categoría</strong>
+        </th>
+        <th>
+          <strong>Origen</strong>
+        </th>
+      </tr>
+      {% for munieco in muniecos %}
+      <tr>
+        <td>{{munieco.tipo}}</td>
+        <td>{{munieco.origen}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+<br>
+
+<a href="{% url 'form_load_munieco' %}">Agregar Muñeco</a>
+<br>
 
 {% endblock contenido_base %}
