@@ -2,7 +2,7 @@ from django.shortcuts import render
 from appregistro.forms import UserRegisterForm
 
 # Create your views here.
-def register(request):
+def registro(request):
     mensaje = ''
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
